@@ -21,7 +21,7 @@ export default function createDemoPage() {
   demoPage.innerHTML = /* html */ `
         <div class="demo-card flex flex-col items-center gap-1 border-1 border-[#d7d7d7] bg-[#f5f5f5] rounded-md shadow-[0px_46px_130px_rgba(0,0,0,15%)] max-sm:h-full max-sm:w-full">
             <div class="border-b-1 border-b-[#D7D7D7] px-10 py-4 text-3xl text-center font-semibold max-sm:w-full max-sm:text-2xl">Custom Dropdown Menu</div>
-            <div class="mt-6 bg-[#AC1CFF] p-1 px-2 rounded-md text-[#F5E4F5] font-semibold text-s max-sm:mt-32">Click the Three Menu Icons below</div>
+            <div class="mt-6 bg-[#dd1cff] p-1 px-2 rounded-md text-[#F5E4F5] font-semibold text-s max-sm:mt-32">Click the Three Menu Icons below</div>
             <div class="mt-12 flex flex-row items-center gap-12">
                 <img id="settings-button" class="h-12 w-12 bg-[#E1E1E1] p-2 rounded-full hover:bg-[#D7D7D7] active:bg-[#CDCDCD] transition" src="${settingsIcon}"> 
                 <img id="three-dot-menu-button" class="h-12 w-12 bg-[#E1E1E1] p-2 rounded-full hover:bg-[#D7D7D7] active:bg-[#CDCDCD] transition" src="${threeDotIcon}"> 
