@@ -1,6 +1,7 @@
 import "./css/output.css";
 import createDemoPage from "./js/demo/page";
+import { ActionItem, CustomDropDownMenu } from "./js/components/drop_down_menu";
 
-console.log("Application successfully initialised!");
+export { ActionItem, CustomDropDownMenu, createDemoPage };
 
 createDemoPage();

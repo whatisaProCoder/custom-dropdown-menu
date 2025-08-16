@@ -1,7 +1,7 @@
 {
   "name": "custom-dropdown-menu",
   "version": "0.0.1",
-  "description": "Custom-made npm package.",
+  "description": "Custom-made npm UI Component.",
   "main": "index.js",
   "scripts": {
     "build": "webpack --config webpack.prod.js",
@@ -9,17 +9,24 @@
     "prepare": "husky && husky install",
     "tailwind-cli:watch": "npx @tailwindcss/cli -i ./src/css/input.css -o ./src/css/output.css --watch"
   },
-  "keywords": [],
+  "keywords": [
+    "dropdown",
+    "ui",
+    "component",
+    "menu",
+    "tailwind",
+    "custom"
+  ],
   "author": "Pritam Debnath",
   "license": "ISC",
   "dependencies": {
-    "@tailwindcss/cli": "^4.1.12",
-    "smooth-scrollbar": "^8.8.4",
-    "tailwindcss": "^4.1.12",
-    "webpack": "^5.99.9",
-    "webpack-cli": "^6.0.1"
+    "smooth-scrollbar": "^8.8.4"
   },
   "devDependencies": {
+    "tailwindcss": "^4.1.12",
+    "webpack": "^5.99.9",
+    "webpack-cli": "^6.0.1",
+    "@tailwindcss/cli": "^4.1.12",
     "@eslint/js": "^9.33.0",
     "css-loader": "^7.1.2",
     "eslint": "^9.33.0",
@@ -43,5 +50,10 @@
     "*.{css,md,json,html,yml,yaml}": [
       "prettier --write"
     ]
-  }
+  },
+  "files": [
+    "index.js",
+    "dist/",
+    "css/output.css"
+  ]
 }

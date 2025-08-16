@@ -1,330 +1,199 @@
-# Web Development Template Repository
+# Custom Dropdown Menu
 
-A versatile template for creating web applications that can be deployed both as a standard web application or packaged as an Electron desktop application. This template provides a solid foundation with modern tooling, custom UI components, and support for both web and desktop environments.
+A lightweight, customizable dropdown menu component with smart positioning and smooth animations.
 
-## 🚀 Features
+![NPM Version](https://img.shields.io/npm/v/custom-dropdown-menu)
+![License](https://img.shields.io/npm/l/custom-dropdown-menu)
 
-- **Dual Deployment**: Build for web or desktop using the same codebase
-- **Modern Development Environment**:
-  - Webpack bundling with separate dev/prod configurations
-  - ESLint + Prettier for code quality and formatting
-  - Husky + lint-staged for pre-commit hooks
-- **Custom UI Components**:
-  - Custom dialog boxes and alert popups
-  - Custom scrollbars (using smooth-scrollbar)
-  - Custom electron title bar for desktop applications
-- **Utility Modules**:
-  - Local storage management
-  - JSON display formatting
-  - Cryptography helpers (UUID generation)
-  - File system operations (using browser-fs-access)
-  - Date manipulation (using date-fns)
-  - Download functionality
-- **Desktop Application Features**:
-  - Electron packaging with Electron Forge
-  - Windows, macOS, and Linux support
-  - Custom title bar with minimize, maximize, and close buttons
-  - Security features with electron fuses
-  - Proper window management and external link handling
-
-## 📋 Prerequisites
-
-- [Node.js](https://nodejs.org/) (v18 or higher recommended)
-- [npm](https://www.npmjs.com/) (v9 or higher recommended)
-- Basic knowledge of JavaScript, HTML, and CSS
-- For Electron packaging: platform-specific requirements
-  - Windows: Windows 10/11
-  - macOS: macOS 10.13 or later
-  - Linux: Debian/Ubuntu or similar
-
-## 🛠️ Getting Started
-
-### Installation
+## Installation
 
 ```bash
-# Clone the repository
-git clone <repository-url>
-
-# Navigate to the project directory
-cd web-dev-template-repo-v2
-
-# Install dependencies
-npm install
+npm install custom-dropdown-menu
 ```
 
-### Development
+## Quick Start
 
-```bash
-# Start the development server (web)
-npm run dev
-
-# Start the Electron app in development mode
-npm run start:electron
-```
-
-The development server will be available at `http://localhost:8080` by default.
-
-### Building
-
-```bash
-# Build for web
-npm run build
-
-# Package as an Electron app
-npm run package
-
-# Create distributable Electron app
-npm run make
-```
-
-## ✨ Code Quality Tools
-
-This template includes several tools to maintain code quality:
-
-- **ESLint**: JavaScript linting with modern configuration in `eslint.config.mjs`
-- **Prettier**: Code formatting with sensible defaults
-- **Husky**: Git hooks for pre-commit linting and formatting
-- **lint-staged**: Only lint and format files that are being committed
-
-```bash
-# Manually run ESLint
-npx eslint .
-
-# Manually run Prettier
-npx prettier --write .
-```
-
-## 📦 Project Structure
-
-```
-├── src/                 # Source code
-│   ├── fonts/           # Font files (Inter.ttf)
-│   ├── icons/           # SVG and other icon assets
-│   │   ├── favicon.svg  # Application icon
-│   │   ├── favicon.png  # Application icon (PNG)
-│   │   └── ...          # UI icons (titlebar, menu, etc.)
-│   ├── js/              # JavaScript modules
-│   │   ├── core/        # Core functionality
-│   │   │   ├── cryptography.js   # UUID generation
-│   │   │   ├── displayJSON.js    # JSON formatting
-│   │   │   └── storageModule.js  # LocalStorage wrapper
-│   │   └── ui/          # UI components and helpers
-│   │       ├── black_page.js     # Blank page utility
-│   │       ├── custom_popups.js  # Alert and confirm dialogs
-│   │       ├── electron_custom_title_bar.js  # Custom window controls
-│   │       └── scrollbar.js      # Custom scrollbar implementation
-│   ├── index.js         # Main entry point
-│   ├── styles.css       # Global styles
-│   └── template.html    # HTML template
-├── index.js             # Electron main process file
-├── preload.js           # Electron preload script for API bridging
-├── app.ico              # Application icon for Windows
-├── data.json            # Sample data with UUIDs
-├── demo.json            # Sample data with simple IDs
-├── webpack.common.js    # Common webpack configuration
-├── webpack.dev.js       # Development webpack configuration
-├── webpack.prod.js      # Production webpack configuration
-├── eslint.config.mjs    # ESLint configuration
-├── forge.config.js      # Electron Forge configuration
-├── LICENSE              # ISC license
-└── package.json         # Project dependencies and scripts
-```
-
-## 🌐 Web Deployment
-
-This template includes scripts for deploying to GitHub Pages:
-
-```bash
-# Create gh-pages branch
-npm run deploy:make-branch
-
-# Sync changes to gh-pages branch
-npm run deploy:sync-branch
-
-# Build for web
-npm run deploy:build-web
-
-# Commit build to gh-pages branch
-npm run deploy:commit
-
-# Push to GitHub Pages
-npm run deploy:upload
-```
-
-These commands handle the entire deployment workflow:
-
-1. Creating a dedicated branch for GitHub Pages
-2. Building the production version of your web app
-3. Committing the built files to the deployment branch
-4. Pushing to GitHub Pages
-
-If you need to delete the GitHub Pages branch and start over:
-
-```bash
-npm run deploy:delete-branch
-```
-
-## 💻 Desktop App Packaging
-
-The template uses Electron Forge for packaging desktop applications:
-
-```bash
-# Create a package
-npm run package
-
-# Create distributables for your platform
-npm run make
-```
-
-Electron Forge will generate platform-specific packages in the `out` directory. The template is configured with the following makers:
-
-- **Squirrel.Windows**: Creates Windows installers (`.exe`)
-- **Debian**: Creates Debian packages (`.deb`) for Linux
-- **WiX**: Creates Windows installers (`.msi`) - configured in package.json but optional
-
-You can customize the packaging options in `forge.config.js`.
-
-## 🔧 Core Modules
-
-### Storage Module
-
-A wrapper for localStorage with error handling:
+1. Import the component and styles:
 
 ```javascript
-import StorageManager from "./js/core/storageModule";
-
-const storage = new StorageManager();
-storage.setData("key", { data: "value" });
-const data = storage.getData("key");
-storage.clearAllStorage(); // Clear all localStorage
+import { CustomDropDownMenu, ActionItem } from "custom-dropdown-menu";
+import "custom-dropdown-menu/css/output.css";
 ```
 
-### JSON Display
+2. Add a trigger element with an ID:
 
-Format and display JSON data with syntax highlighting:
-
-```javascript
-import displayJSON from "./js/core/displayJSON";
-
-// Automatically formats and displays JSON with highlighting
-displayJSON({ key: "value", nested: { array: [1, 2, 3] } });
+```html
+<button id="menu-trigger">Open Menu</button>
 ```
 
-### Cryptography
-
-Generate unique identifiers for your application:
+3. Create your dropdown menu:
 
 ```javascript
-import generateID from "./js/core/cryptography";
+const menu = new CustomDropDownMenu({
+  menuTitle: "Options",
+  triggerElementID: "menu-trigger",
+  actionItemArray: [
+    new ActionItem("Item 1", () => console.log("Item 1 clicked")),
+    new ActionItem("Item 2", () => console.log("Item 2 clicked")),
+  ],
+  height: "200px",
+  width: "180px",
+});
 
-// Generate a new UUID
-const newId = generateID(); // e.g., "123e4567-e89b-12d3-a456-426614174000"
+menu.setEventListeners();
 ```
 
-### UI Components
+That's it! Your dropdown menu is ready to use.
 
-#### Custom Popups
+## Features
+
+- 🎯 **Smart Positioning**: Automatically stays within viewport
+- ✨ **Smooth Animations**: Clean fade in/out transitions
+- 📱 **Responsive Design**: Works on all screen sizes
+- 🖱️ **Click-Away Detection**: Closes when clicking outside
+- 📜 **Scrollable Content**: Handles long menus beautifully
+
+## Basic Usage
+
+### Creating a Menu
 
 ```javascript
-import { showAlert, showConfirm } from "./js/ui/custom_popups";
+// Import the components
+import { CustomDropDownMenu, ActionItem } from "custom-dropdown-menu";
 
-// Show alert dialog
-showAlert(parentDialogReference, "This is an alert message");
+// Create action items with callback functions
+const actions = [
+  new ActionItem("Save", () => saveDocument()),
+  new ActionItem("Delete", () => deleteDocument()),
+  new ActionItem("Share", () => shareDocument()),
+];
 
-// Show confirmation dialog
-const result = await showConfirm(
-  parentDialogReference,
-  "Are you sure you want to delete?",
+// Create the dropdown menu
+const menu = new CustomDropDownMenu({
+  menuTitle: "Document Options", // Title shown at the top of the menu
+  triggerElementID: "doc-options", // ID of the element that will open the menu
+  actionItemArray: actions, // Array of ActionItem objects
+  height: "200px", // Height of the menu
+  width: "180px", // Width of the menu
+  logEvent: true, // Optional: logs events to console
+});
+
+// Initialize event listeners
+menu.setEventListeners();
+```
+
+### ActionItem
+
+The `ActionItem` class creates clickable menu items:
+
+```javascript
+new ActionItem(
+  "Item Name", // The text displayed in the menu
+  () => doSomething(), // Function called when item is clicked
 );
-if (result) {
-  // User confirmed
-}
 ```
 
-#### Custom Scrollbars
+## API Reference
+
+### CustomDropDownMenu
+
+#### Constructor Options
+
+| Option             | Type         | Required | Description                                       |
+| ------------------ | ------------ | -------- | ------------------------------------------------- |
+| `menuTitle`        | string       | Yes      | The title displayed at the top of the menu        |
+| `triggerElementID` | string       | Yes      | ID of the HTML element that will trigger the menu |
+| `actionItemArray`  | ActionItem[] | Yes      | Array of ActionItem objects to display            |
+| `height`           | string       | Yes      | Height of the menu (e.g., "200px")                |
+| `width`            | string       | Yes      | Width of the menu (e.g., "180px")                 |
+| `logEvent`         | boolean      | No       | Enable console logging for events                 |
+
+#### Methods
+
+| Method                | Description                                                     |
+| --------------------- | --------------------------------------------------------------- |
+| `setEventListeners()` | Initializes the menu's event listeners                          |
+| `render()`            | Renders the menu (automatically called when trigger is clicked) |
+| `close()`             | Closes the menu with a fade-out animation                       |
+
+### ActionItem
+
+#### Constructor Parameters
+
+| Parameter        | Type     | Description                            |
+| ---------------- | -------- | -------------------------------------- |
+| `actionName`     | string   | Text displayed in the menu item        |
+| `actionFunction` | function | Callback function when item is clicked |
+
+## Examples
+
+### Basic Menu
 
 ```javascript
-import setupScrollbars from "./js/ui/scrollbar";
+import { CustomDropDownMenu, ActionItem } from "custom-dropdown-menu";
 
-// Initialize custom scrollbars on elements with class 'scroll-container'
-setupScrollbars();
+const menu = new CustomDropDownMenu({
+  menuTitle: "Settings",
+  triggerElementID: "settings-btn",
+  actionItemArray: [
+    new ActionItem("Profile", () => openProfile()),
+    new ActionItem("Preferences", () => openPreferences()),
+    new ActionItem("Logout", () => logout()),
+  ],
+  height: "180px",
+  width: "150px",
+});
+
+menu.setEventListeners();
 ```
 
-#### Custom Electron Title Bar
+### Multiple Menus
 
 ```javascript
-import createTitleBar from "./js/ui/electron_custom_title_bar";
+// First menu
+const settingsMenu = new CustomDropDownMenu({
+  menuTitle: "Settings",
+  triggerElementID: "settings-btn",
+  actionItemArray: [
+    new ActionItem("Account", () => showAccount()),
+    new ActionItem("Logout", () => logout()),
+  ],
+  height: "120px",
+  width: "150px",
+}).setEventListeners();
 
-// Create and attach a custom title bar with minimize, maximize, and close buttons
-createTitleBar();
+// Second menu
+const fileMenu = new CustomDropDownMenu({
+  menuTitle: "File",
+  triggerElementID: "file-btn",
+  actionItemArray: [
+    new ActionItem("New", () => createNew()),
+    new ActionItem("Open", () => openFile()),
+    new ActionItem("Save", () => saveFile()),
+  ],
+  height: "150px",
+  width: "150px",
+}).setEventListeners();
 ```
 
-#### Clear Content
+## Styling
 
-```javascript
-import createBlankPage from "./js/ui/black_page";
+The component uses Tailwind CSS classes for styling. The default styling provides a clean, modern look, but you can customize it by:
 
-// Clear the content div
-createBlankPage();
-```
+1. Adding CSS classes to your project
+2. Targeting the menu elements with CSS selectors
 
-## 🔌 Electron Integration
+## Browser Support
 
-The template provides a secure bridge between Electron's main and renderer processes using the contextBridge API:
+Works in all modern browsers:
 
-```javascript
-// Available in renderer process as window.electronAPI
-window.electronAPI.minimize(); // Minimize the window
-window.electronAPI.maximize(); // Toggle maximize/restore
-window.electronAPI.close(); // Close the window
-window.electronAPI.unmaximize(); // Unmaximize the window
-```
+- Chrome, Firefox, Safari, Edge (latest versions)
+- IE11 not supported
 
-This implementation follows Electron security best practices with:
+## Dependencies
 
-- Context isolation enabled
-- Node integration disabled
-- Secure IPC communication
+- [Smooth Scrollbar](https://github.com/idiotWu/smooth-scrollbar): For smooth scrolling in menus with many items
 
-## 📄 License
+## License
 
-This project is licensed under the [ISC License](LICENSE).
-
-## 📊 Sample Data
-
-The repository includes sample JSON data files that can be used for testing:
-
-- `data.json`: Contains sample data with UUIDs as identifiers
-- `demo.json`: Contains sample data with simple string IDs
-
-These files are useful for prototyping and testing the application's data handling capabilities.
-
-## 🛠️ Troubleshooting
-
-### Common Issues
-
-1. **Webpack build fails**
-   - Make sure all dependencies are installed correctly with `npm install`
-   - Check for syntax errors in your JavaScript files
-
-2. **Electron app doesn't start**
-   - Ensure you've run `npm run build` before `npm run start:electron`
-   - Check the console for error messages
-
-3. **Icons not displaying**
-   - Verify that the SVG/PNG files are in the correct location
-   - Check webpack configuration for asset handling
-
-### Development Tips
-
-- Use the `// win.webContents.openDevTools();` line in `index.js` (uncomment it) to enable DevTools for debugging Electron apps
-- The template comes with ESLint and Prettier configured to work together - use them!
-- The Husky pre-commit hooks ensure code quality - make sure your changes pass linting before committing
-
-## 👥 Contributing
-
-Contributions are welcome! Feel free to open issues or submit pull requests to improve this template.
-
----
-
-© 2025 Pritam Debnath. All rights reserved.
+ISC © [Pritam Debnath](https://github.com/whatisaProCoder)

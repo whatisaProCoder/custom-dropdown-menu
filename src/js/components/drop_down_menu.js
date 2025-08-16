@@ -22,7 +22,6 @@ export class CustomDropDownMenu {
     const windowWidth = window.innerWidth;
 
     this.triggerElementRect = this.triggerElement.getBoundingClientRect();
-    console.log(this.triggerElementRect);
 
     const triggerPositionX =
       this.triggerElementRect.left + this.triggerElementRect.width / 2;
@@ -44,20 +43,30 @@ export class CustomDropDownMenu {
       menuPositionY = windowHeight - this.height - 32;
     }
 
-    console.log(menuPositionX, menuPositionY);
-
     menuPositionX = Math.ceil(menuPositionX);
     menuPositionY = Math.ceil(menuPositionY);
 
     return { menuPositionX, menuPositionY };
   }
   setEventListeners() {
+    this.menuElement = document.createElement("div");
     this.triggerElement = document.querySelector(`#${this.triggerElementID}`);
+
     this.triggerElement.addEventListener("click", (event) => {
       if (this.logEvent == true) console.log(event.target);
       if (this.isOpen == false) {
         this.isOpen = true;
         this.render();
+      }
+    });
+
+    document.addEventListener("click", (event) => {
+      if (
+        !this.menuElement.contains(event.target) &&
+        this.isOpen == true &&
+        !this.triggerElement.contains(event.target)
+      ) {
+        this.close();
       }
     });
   }
@@ -66,7 +75,6 @@ export class CustomDropDownMenu {
       console.log("Opening Menu of Title: ", this.menuTitle);
 
     const { menuPositionX, menuPositionY } = this.#calculatePosition();
-    this.menuElement = document.createElement("div");
 
     this.menuElement.style.position = "fixed";
     this.menuElement.style.height = `${this.height}px`;
@@ -104,16 +112,6 @@ export class CustomDropDownMenu {
 
     document.body.appendChild(this.menuElement);
 
-    document.addEventListener("click", (event) => {
-      if (
-        !this.menuElement.contains(event.target) &&
-        this.isOpen == true &&
-        !this.triggerElement.contains(event.target)
-      ) {
-        this.close();
-      }
-    });
-
     Scrollbar.init(this.menuElement.querySelector("#action-group"), {
       alwaysShowTracks: true,
     });
@@ -138,10 +136,5 @@ export class ActionItem {
   constructor(actionName, actionFunction) {
     this.actionName = actionName;
     this.actionFunction = actionFunction;
-  }
-  addIcon(iconSrc, iconScale) {
-    this.iconSrc = iconSrc;
-    this.iconScale = iconScale;
-    return this;
   }
 }
