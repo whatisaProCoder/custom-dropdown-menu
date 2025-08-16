@@ -76,6 +76,9 @@ export class CustomDropDownMenu {
 
     const { menuPositionX, menuPositionY } = this.#calculatePosition();
 
+    // for user's custom styling, target this class
+    this.menuElement.classList.add("cdm-menu-card");
+
     this.menuElement.style.position = "fixed";
     this.menuElement.style.height = `${this.height}px`;
     this.menuElement.style.width = `${this.width}px`;
@@ -89,15 +92,21 @@ export class CustomDropDownMenu {
     this.menuElement.classList.add("flex", "flex-col");
 
     this.menuElement.innerHTML = /* html */ `
-            <div class="font-semibold text-xl text-[#3C3C3C] px-4 py-2.5 border-b-1 border-[#D7D7D7]">${this.menuTitle}</div>
+            <div class="cdm-menu-title font-semibold text-xl text-[#3C3C3C] px-4 py-2.5 border-b-1 border-[#D7D7D7]">${this.menuTitle}</div>
             <div id="action-group">
             </div>
         `;
+
+    // target cdm-menu-title for custom styling of menu title
 
     const actionGroup = this.menuElement.querySelector("#action-group");
     actionGroup.style.overflow = "auto";
     this.actionItemArray.forEach((actionItem) => {
       const actionItemElement = document.createElement("div");
+
+      // target cdm-action-item for custom styling
+      actionItemElement.classList.add("cdm-action-item");
+
       actionItemElement.classList.add("p-4", "py-2.5", "mt-2");
       actionItemElement.style.userSelect = "none";
       actionItemElement.innerHTML = /* html */ `

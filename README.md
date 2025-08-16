@@ -181,10 +181,45 @@ const fileMenu = new CustomDropDownMenu({
 
 ## Styling
 
-The component uses Tailwind CSS classes for styling. The default styling provides a clean, modern look, but you can customize it by:
+The component uses Tailwind CSS classes for styling. The default styling provides a clean, modern look, but you can customize it by overriding the built-in CSS classes.
 
-1. Adding CSS classes to your project
-2. Targeting the menu elements with CSS selectors
+### Custom CSS Classes
+
+The component includes specific CSS classes to make custom styling easy:
+
+| Class Name        | Element        | Description                                     |
+| ----------------- | -------------- | ----------------------------------------------- |
+| `cdm-menu-card`   | Menu container | The outer container of the entire dropdown menu |
+| `cdm-menu-title`  | Title bar      | The title section at the top of the menu        |
+| `cdm-action-item` | Menu items     | Individual clickable items in the menu          |
+
+### Example Custom Styling
+
+```css
+/* Style the menu container */
+.cdm-menu-card {
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Style the menu title */
+.cdm-menu-title {
+  background-color: #4a5568;
+  color: white;
+  font-weight: bold;
+}
+
+/* Style the menu items */
+.cdm-action-item {
+  padding: 12px 16px;
+  transition: background-color 0.2s;
+}
+
+.cdm-action-item:hover {
+  background-color: #f7fafc;
+  cursor: pointer;
+}
+```
 
 ## Browser Support
 
