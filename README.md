@@ -5,6 +5,10 @@ A lightweight, customizable dropdown menu component with smart positioning and s
 ![NPM Version](https://img.shields.io/npm/v/custom-dropdown-menu)
 ![License](https://img.shields.io/npm/l/custom-dropdown-menu)
 
+## Demo
+
+![Dropdown Menu Demo](./demo/recording.gif)
+
 ## Installation
 
 ```bash
