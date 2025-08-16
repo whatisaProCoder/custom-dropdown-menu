@@ -1,6 +1,3 @@
-// Import CSS (this includes it in the bundle)
-import "./src/css/output.css";
-
 // Import components
 import {
   ActionItem,
