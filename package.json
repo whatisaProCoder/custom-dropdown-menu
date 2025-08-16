@@ -59,6 +59,7 @@
   },
   "files": [
     "index.js",
+    "./src/js/components/drop_down_menu.js",
     "./src/css/output.css"
   ],
   "repository": {
