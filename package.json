@@ -7,7 +7,13 @@
     "build": "webpack --config webpack.prod.js",
     "dev": "webpack serve --config webpack.dev.js",
     "prepare": "husky && husky install",
-    "tailwind-cli:watch": "npx @tailwindcss/cli -i ./src/css/input.css -o ./src/css/output.css --watch"
+    "tailwind-cli:watch": "npx @tailwindcss/cli -i ./src/css/input.css -o ./src/css/output.css --watch",
+    "deploy:make-branch": "git branch gh-pages",
+    "deploy:delete-branch": "git branch -D gh-pages && git push origin --delete gh-pages",
+    "deploy:sync-branch": "git status && git add . && git commit -m \"final deployment\" && git checkout gh-pages && git merge main --no-edit",
+    "deploy:build-web": "npm run build",
+    "deploy:commit": "git add dist -f && git commit -m \"Deployment commit\"",
+    "deploy:upload": " git subtree push --prefix dist origin gh-pages && git checkout main"
   },
   "keywords": [
     "dropdown",
