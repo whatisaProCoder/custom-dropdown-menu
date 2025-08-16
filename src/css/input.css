@@ -1,6 +1,8 @@
+@import "tailwindcss";
+
 @font-face {
   font-family: "Inter";
-  src: url("./fonts/Inter.ttf") format("truetype");
+  src: url("../fonts/Inter.ttf") format("truetype");
 }
 
 * {
@@ -18,20 +20,6 @@ body {
   font-family: "Inter", "Segoe UI";
   background-color: #f8f8f8;
   position: relative;
-}
-
-dialog {
-  position: relative;
-  z-index: 100;
-  animation: fade-out 0.3s ease-out;
-}
-
-dialog:open {
-  animation: fade-in 0.3s ease-out;
-}
-
-dialog:open::backdrop {
-  animation: backdrop-fade-in 0.2s ease-out forwards;
 }
 
 /* Animation keyframes */
@@ -68,22 +56,4 @@ dialog:open::backdrop {
   100% {
     background-color: rgb(0 0 0 / 5%);
   }
-}
-
-select {
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-
-  /* Custom dropdown arrow */
-  background-image: url("../src/icons/drop_down_arrow.svg");
-  background-repeat: no-repeat;
-  background-position: right 5px center;
-  background-size: 20px 20px;
-  /* <-- make arrow bigger */
-}
-
-textarea {
-  resize: vertical;
-  font-family: "Inter";
 }

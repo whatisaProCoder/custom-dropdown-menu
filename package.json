@@ -12,7 +12,9 @@
   "author": "Pritam Debnath",
   "license": "ISC",
   "dependencies": {
+    "@tailwindcss/cli": "^4.1.12",
     "smooth-scrollbar": "^8.8.4",
+    "tailwindcss": "^4.1.12",
     "webpack": "^5.99.9",
     "webpack-cli": "^6.0.1"
   },
