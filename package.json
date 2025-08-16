@@ -61,7 +61,7 @@
     "index.js",
     "./src/js/components/drop_down_menu.js",
     "./src/css/output.css",
-    "./src/fonts/Inter.tff"
+    "./src/fonts/Inter.ttf"
   ],
   "repository": {
     "type": "git",
