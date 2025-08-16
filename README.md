@@ -198,28 +198,34 @@ The component includes specific CSS classes to make custom styling easy:
 ```css
 /* Style the menu container */
 .cdm-menu-card {
-  border-radius: 8px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  border-radius: 8px !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2) !important;
 }
 
 /* Style the menu title */
 .cdm-menu-title {
-  background-color: #4a5568;
-  color: white;
-  font-weight: bold;
+  background-color: #4a5568 !important;
+  color: white !important;
+  font-weight: bold !important;
 }
 
 /* Style the menu items */
 .cdm-action-item {
-  padding: 12px 16px;
-  transition: background-color 0.2s;
+  padding: 12px 16px !important;
+  transition: background-color 0.2s !important;
 }
 
 .cdm-action-item:hover {
-  background-color: #f7fafc;
-  cursor: pointer;
+  background-color: #f7fafc !important;
+  cursor: pointer !important;
 }
 ```
+
+### Using !important
+
+Because the component uses Tailwind CSS internally, you may need to use the `!important` rule to ensure your custom styles override the default styles. This is common when customizing third-party components.
+
+If your custom styles aren't being applied, try adding `!important` to the CSS properties as shown in the example above.
 
 ## Browser Support
 
