@@ -9,10 +9,12 @@ A lightweight, customizable dropdown menu component with smart positioning and s
 
 ![Dropdown Menu Demo](./demo/recording.gif)
 
+**[Live Demo](https://whatisaprocoder.github.io/custom-dropdown-menu/)** - See the component in action!
+
 ## Installation
 
 ```bash
-npm install custom-dropdown-menu
+npm install @pd200x/custom-dropdown-menu
 ```
 
 ## Quick Start
@@ -20,7 +22,7 @@ npm install custom-dropdown-menu
 1. Import the component:
 
 ```javascript
-import { CustomDropDownMenu, ActionItem } from "custom-dropdown-menu";
+import { CustomDropDownMenu, ActionItem } from "@pd200x/custom-dropdown-menu";
 ```
 
 2. Add a trigger element with an ID:
