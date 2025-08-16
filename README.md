@@ -227,13 +227,6 @@ Because the component uses Tailwind CSS internally, you may need to use the `!im
 
 If your custom styles aren't being applied, try adding `!important` to the CSS properties as shown in the example above.
 
-## Browser Support
-
-Works in all modern browsers:
-
-- Chrome, Firefox, Safari, Edge (latest versions)
-- IE11 not supported
-
 ## Dependencies
 
 - [Smooth Scrollbar](https://github.com/idiotWu/smooth-scrollbar): For smooth scrolling in menus with many items
