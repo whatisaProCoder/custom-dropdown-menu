@@ -6,20 +6,14 @@
 }
 
 * {
-  margin: 0px;
-  padding: 0px;
   box-sizing: border-box;
   letter-spacing: -0.02em;
 }
 
 body {
-  font-size: 16px;
-  display: flex;
-  flex-direction: row;
   height: 100vh;
   font-family: "Inter", "Segoe UI";
   background-color: #f8f8f8;
-  position: relative;
 }
 
 /* Animation keyframes */
@@ -27,33 +21,27 @@ body {
 @keyframes fade-in {
   0% {
     opacity: 0;
-    display: none;
   }
 
   100% {
     opacity: 1;
-    display: block;
   }
 }
 
 @keyframes fade-out {
   0% {
     opacity: 1;
-    display: block;
   }
 
   100% {
     opacity: 0;
-    display: none;
   }
 }
 
-@keyframes backdrop-fade-in {
-  0% {
-    background-color: rgb(0 0 0 / 0%);
-  }
+.fade-in {
+  animation: fade-in 0.5s ease forwards;
+}
 
-  100% {
-    background-color: rgb(0 0 0 / 5%);
-  }
+.fade-out {
+  animation: fade-out 0.5s ease forwards;
 }

@@ -6,7 +6,8 @@
   "scripts": {
     "build": "webpack --config webpack.prod.js",
     "dev": "webpack serve --config webpack.dev.js",
-    "prepare": "husky && husky install"
+    "prepare": "husky && husky install",
+    "tailwind-cli:watch": "npx @tailwindcss/cli -i ./src/css/input.css -o ./src/css/output.css --watch"
   },
   "keywords": [],
   "author": "Pritam Debnath",
