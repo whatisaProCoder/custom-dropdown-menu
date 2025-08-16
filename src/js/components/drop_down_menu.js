@@ -108,6 +108,9 @@ export class CustomDropDownMenu {
       actionItemElement.classList.add("cdm-action-item");
 
       actionItemElement.classList.add("p-4", "py-2.5", "mt-2");
+      actionItemElement.classList.add("hover:bg-[#EBEBEB]");
+      actionItemElement.classList.add("active:bg-[#E1E1E1]");
+
       actionItemElement.style.userSelect = "none";
       actionItemElement.innerHTML = /* html */ `
                 ${actionItem.actionName}
