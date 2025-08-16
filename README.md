@@ -13,11 +13,10 @@ npm install custom-dropdown-menu
 
 ## Quick Start
 
-1. Import the component and styles:
+1. Import the component:
 
 ```javascript
 import { CustomDropDownMenu, ActionItem } from "custom-dropdown-menu";
-import "custom-dropdown-menu/css/output.css";
 ```
 
 2. Add a trigger element with an ID:
