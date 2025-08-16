@@ -2,8 +2,8 @@
 
 A lightweight, customizable dropdown menu component with smart positioning and smooth animations.
 
-![NPM Version](https://img.shields.io/npm/v/custom-dropdown-menu)
-![License](https://img.shields.io/npm/l/custom-dropdown-menu)
+![NPM Version](https://img.shields.io/npm/v/@pd200x/custom-dropdown-menu)
+![License](https://img.shields.io/npm/l/@pd200x/custom-dropdown-menu)
 
 ## Demo
 

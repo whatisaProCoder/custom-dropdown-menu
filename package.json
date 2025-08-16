@@ -1,5 +1,5 @@
 {
-  "name": "custom-dropdown-menu",
+  "name": "@pd200x/custom-dropdown-menu",
   "version": "0.0.1",
   "description": "Custom-made npm UI Component.",
   "main": "index.js",
@@ -55,5 +55,13 @@
     "index.js",
     "dist/",
     "css/output.css"
-  ]
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/whatisaProCoder/custom-dropdown-menu.git"
+  },
+  "bugs": {
+    "url": "https://github.com/whatisaProCoder/custom-dropdown-menu/issues"
+  },
+  "homepage": "https://github.com/whatisaProCoder/custom-dropdown-menu#readme"
 }
