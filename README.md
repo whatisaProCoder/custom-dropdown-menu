@@ -17,13 +17,28 @@ A lightweight, customizable dropdown menu component with smart positioning and s
 npm install @pd200x/custom-dropdown-menu
 ```
 
+# Usage
+
+This component uses Tailwind CSS. Make sure your project has Tailwind installed and your `tailwind.config.js` scans the package files:
+
+````js
+module.exports = {
+  content: [
+    "./src/**/*.{js,ts,jsx,tsx}",
+    "./node_modules/@pd200x/custom-dropdown-menu/**/*.{js,ts,jsx,tsx}"
+  ],
+  theme: { extend: {} },
+  plugins: [],
+};
+
+
 ## Quick Start
 
 1. Import the component:
 
 ```javascript
 import { CustomDropDownMenu, ActionItem } from "@pd200x/custom-dropdown-menu";
-```
+````
 
 2. Add a trigger element with an ID:
 
