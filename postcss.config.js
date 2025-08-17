@@ -1,4 +1,3 @@
-// postcss.config.js
 import tailwind from "@tailwindcss/postcss";
 import autoprefixer from "autoprefixer";
 import prefixSelector from "postcss-prefix-selector";
