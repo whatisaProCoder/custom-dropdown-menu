@@ -43,8 +43,8 @@ export default function createDemoPage() {
       new ActionItem("Export", () => console.log("Export pressed")),
       new ActionItem("Reset", () => console.log("Reset pressed")),
     ],
-    height: "215px",
-    width: "180px",
+    height: "210px",
+    width: "170px",
     logEvent: true,
   }).setEventListeners();
 
@@ -58,8 +58,8 @@ export default function createDemoPage() {
       new ActionItem("Item 4", () => console.log("Item 4 pressed")),
       new ActionItem("Item 5", () => console.log("Item 5 pressed")),
     ],
-    height: "215px",
-    width: "180px",
+    height: "210px",
+    width: "170px",
     logEvent: true,
   }).setEventListeners();
 
@@ -73,8 +73,8 @@ export default function createDemoPage() {
       new ActionItem("Action 4", () => console.log("Menu Action 4 pressed")),
       new ActionItem("Action 5", () => console.log("Menu Action 5 pressed")),
     ],
-    height: "215px",
-    width: "180px",
+    height: "210px",
+    width: "170px",
     logEvent: true,
   }).setEventListeners();
 }
