@@ -26,6 +26,12 @@ If you're not using npm, you can manually download and include these two essenti
 1. `drop_down_menu.js` - The main component JavaScript file
 2. `component.css` - The required CSS styles
 
+You can find these files:
+
+- From the GitHub repo:
+  - `src/js/components/drop_down_menu.js`
+  - `src/css/component.css`
+
 Then include them in your HTML:
 
 ```html
