@@ -1,0 +1,124 @@
+.mycdm-flex {
+  display: flex;
+}
+
+.mycdm-flex-col {
+  flex-direction: column;
+}
+
+.mycdm-border-1 {
+  border-width: 1px;
+  border-style: solid;
+}
+
+.mycdm-border-b-1 {
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+}
+
+.mycdm-border-gray {
+  border-color: #d7d7d7;
+}
+
+.mycdm-bg-light {
+  background-color: #f5f5f5;
+}
+
+.mycdm-hover-bg-medium:hover {
+  background-color: #ebebeb;
+}
+
+.mycdm-active-bg-dark-medium:active {
+  background-color: #e1e1e1;
+}
+
+.mycdm-rounded-md {
+  border-radius: 0.375rem;
+}
+
+.mycdm-shadow {
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.mycdm-font-semibold {
+  font-weight: 600;
+}
+
+.mycdm-text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+.mycdm-text-dark {
+  color: #3c3c3c;
+}
+
+.mycdm-px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.mycdm-py-2-5 {
+  padding-top: 0.625rem;
+  padding-bottom: 0.625rem;
+}
+
+.mycdm-p-4 {
+  padding: 1rem;
+}
+
+.mycdm-mt-2 {
+  margin-top: 0.5rem;
+}
+
+.fade-in {
+  animation: fadeIn 0.3s ease-in-out;
+  opacity: 1;
+}
+
+.fade-out {
+  animation: fadeOut 0.5s ease-in-out;
+  opacity: 0;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+.cdm-menu-card {
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.cdm-menu-title {
+  user-select: none;
+}
+
+.cdm-action-item {
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.cdm-action-item:hover {
+  transition: background-color 0.15s ease;
+}
+
+.cdm-action-item:active {
+  transition: background-color 0.1s ease;
+}

@@ -1,4 +1,5 @@
 import Scrollbar from "smooth-scrollbar";
+import "../../css/component.css";
 
 export class CustomDropDownMenu {
   constructor({
@@ -86,13 +87,13 @@ export class CustomDropDownMenu {
     this.menuElement.style.top = `${menuPositionY}px`;
     this.menuElement.style.overflow = "hidden";
 
-    this.menuElement.classList.add("border-1", "border-[#D7D7D7]");
-    this.menuElement.classList.add("bg-[#F5F5F5]", "rounded-md");
-    this.menuElement.classList.add("shadow-[0px_4px_16px_rgba(0,0,0,15%)]");
-    this.menuElement.classList.add("flex", "flex-col");
+    this.menuElement.classList.add("mycdm-border-1", "mycdm-border-gray");
+    this.menuElement.classList.add("mycdm-bg-light", "mycdm-rounded-md");
+    this.menuElement.classList.add("mycdm-shadow");
+    this.menuElement.classList.add("mycdm-flex", "mycdm-flex-col");
 
     this.menuElement.innerHTML = /* html */ `
-            <div class="cdm-menu-title font-semibold text-xl text-[#3C3C3C] px-4 py-2.5 border-b-1 border-[#D7D7D7]">${this.menuTitle}</div>
+            <div class="cdm-menu-title mycdm-font-semibold mycdm-text-xl mycdm-text-dark mycdm-px-4 mycdm-py-2-5 mycdm-border-b-1 mycdm-border-gray">${this.menuTitle}</div>
             <div id="action-group">
             </div>
         `;
@@ -107,9 +108,13 @@ export class CustomDropDownMenu {
       // target cdm-action-item for custom styling
       actionItemElement.classList.add("cdm-action-item");
 
-      actionItemElement.classList.add("p-4", "py-2.5", "mt-2");
-      actionItemElement.classList.add("hover:bg-[#EBEBEB]");
-      actionItemElement.classList.add("active:bg-[#E1E1E1]");
+      actionItemElement.classList.add(
+        "mycdm-p-4",
+        "mycdm-py-2-5",
+        "mycdm-mt-2",
+      );
+      actionItemElement.classList.add("mycdm-hover-bg-medium");
+      actionItemElement.classList.add("mycdm-active-bg-dark-medium");
 
       actionItemElement.style.userSelect = "none";
       actionItemElement.innerHTML = /* html */ `
