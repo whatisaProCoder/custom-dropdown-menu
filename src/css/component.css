@@ -1,3 +1,8 @@
+@font-face {
+  font-family: "Inter";
+  src: url("../fonts/Inter.ttf") format("truetype");
+}
+
 .mycdm-flex {
   display: flex;
 }
@@ -104,6 +109,7 @@
 .cdm-menu-card {
   z-index: 1000;
   transition: all 0.3s ease;
+  font-family: "Inter";
 }
 
 .cdm-menu-title {
