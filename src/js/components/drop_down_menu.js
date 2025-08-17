@@ -133,15 +133,15 @@ export class CustomDropDownMenu {
       alwaysShowTracks: true,
     });
 
-    this.menuElement.classList.remove("fade-out");
-    this.menuElement.classList.add("fade-in");
+    this.menuElement.classList.remove("mycdm-fade-out");
+    this.menuElement.classList.add("mycdm-fade-in");
   }
   close() {
     if (this.logEvent == true) {
       console.log("Closing Menu of Title: ", this.menuTitle);
     }
-    this.menuElement.classList.remove("fade-in");
-    this.menuElement.classList.add("fade-out");
+    this.menuElement.classList.remove("mycdm-fade-in");
+    this.menuElement.classList.add("mycdm-fade-out");
     setTimeout(() => {
       this.menuElement.remove();
       this.isOpen = false;

@@ -76,17 +76,17 @@
   margin-top: 0.5rem;
 }
 
-.fade-in {
-  animation: fadeIn 0.3s ease-in-out;
+.mycdm-fade-in {
+  animation: mycdm-fadeIn 0.3s ease-in-out;
   opacity: 1;
 }
 
-.fade-out {
-  animation: fadeOut 0.5s ease-in-out;
+.mycdm-fade-out {
+  animation: mycdm-fadeOut 0.5s ease-in-out;
   opacity: 0;
 }
 
-@keyframes fadeIn {
+@keyframes mycdm-fadeIn {
   from {
     opacity: 0;
   }
@@ -96,7 +96,7 @@
   }
 }
 
-@keyframes fadeOut {
+@keyframes mycdm-fadeOut {
   from {
     opacity: 1;
   }
