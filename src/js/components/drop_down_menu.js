@@ -109,7 +109,7 @@ export class CustomDropDownMenu {
       actionItemElement.classList.add("cdm-action-item");
 
       actionItemElement.classList.add(
-        "mycdm-p-4",
+        "mycdm-px-4",
         "mycdm-py-2-5",
         "mycdm-mt-2",
       );
