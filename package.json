@@ -7,13 +7,13 @@
     "build": "webpack --config webpack.prod.js",
     "dev": "webpack serve --config webpack.dev.js",
     "prepare": "husky && husky install",
-    "tailwind-cli:watch": "npx @tailwindcss/cli -i ./src/css/input.css -o ./src/css/output.css --watch",
     "deploy:make-branch": "git branch gh-pages",
     "deploy:delete-branch": "git branch -D gh-pages && git push origin --delete gh-pages",
     "deploy:sync-branch": "git status && git add . && git commit -m \"final deployment\" && git checkout gh-pages && git merge main --no-edit",
     "deploy:build-web": "npm run build",
     "deploy:commit": "git add dist -f && git commit -m \"Deployment commit\"",
-    "deploy:upload": " git subtree push --prefix dist origin gh-pages && git checkout main"
+    "deploy:upload": " git subtree push --prefix dist origin gh-pages && git checkout main",
+    "postcss-cli:watch": "postcss ./src/css/input.css -o ./src/css/output.css --watch"
   },
   "keywords": [
     "dropdown",
@@ -26,13 +26,18 @@
   "author": "Pritam Debnath",
   "license": "ISC",
   "dependencies": {
-    "smooth-scrollbar": "^8.8.4",
-    "tailwindcss": "^4.1.12"
+    "smooth-scrollbar": "^8.8.4"
   },
   "devDependencies": {
     "webpack": "^5.99.9",
     "webpack-cli": "^6.0.1",
+    "tailwindcss": "^4.1.12",
     "@tailwindcss/cli": "^4.1.12",
+    "autoprefixer": "^10.4.21",
+    "@tailwindcss/postcss": "^4.1.12",
+    "postcss": "^8.5.6",
+    "postcss-cli": "^11.0.1",
+    "postcss-prefix-selector": "^2.1.1",
     "@eslint/js": "^9.33.0",
     "css-loader": "^7.1.2",
     "eslint": "^9.33.0",

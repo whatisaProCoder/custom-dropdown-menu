@@ -106,6 +106,7 @@ export class CustomDropDownMenu {
 
       // target cdm-action-item for custom styling
       actionItemElement.classList.add("cdm-action-item");
+      actionItemElement.classList.add("my-cdm");
 
       actionItemElement.classList.add("p-4", "py-2.5", "mt-2");
       actionItemElement.classList.add("hover:bg-[#EBEBEB]");
