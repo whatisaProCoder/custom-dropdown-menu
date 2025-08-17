@@ -19,6 +19,20 @@ First, install the package in your project:
 npm install @pd200x/custom-dropdown-menu
 ```
 
+### Manual Installation (Without npm)
+
+If you're not using npm, you can manually download and include these two essential files:
+
+1. `drop_down_menu.js` - The main component JavaScript file
+2. `component.css` - The required CSS styles
+
+Then include them in your HTML:
+
+```html
+<link rel="stylesheet" href="path/to/component.css" />
+<script src="path/to/drop_down_menu.js"></script>
+```
+
 ## Getting Started (Beginner-Friendly Guide)
 
 ### Step 1: Add a button or trigger element in your HTML
