@@ -1,7 +1,7 @@
 import threeDotIcon from "../../icons/three-dot-icon.svg";
 import settingsIcon from "../../icons/settings-icon.svg";
 import hamburgerIcon from "../../icons/hamburger-icon.svg";
-import { ActionItem, CustomDropDownMenu } from "../components/drop_down_menu";
+import { ActionItem, CustomDropDownMenu } from "@pd200x/custom-dropdown-menu";
 
 export default function createDemoPage() {
   const content = document.querySelector(".content");
