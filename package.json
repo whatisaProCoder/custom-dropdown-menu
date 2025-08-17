@@ -13,7 +13,7 @@
     "deploy:build-web": "npm run build",
     "deploy:commit": "git add dist -f && git commit -m \"Deployment commit\"",
     "deploy:upload": " git subtree push --prefix dist origin gh-pages && git checkout main",
-    "postcss-cli:watch": "postcss ./src/css/input.css -o ./src/css/output.css --watch"
+    "tailwind-cli:watch": "tailwindcss -i ./src/css/input.css -o ./src/css/output.css --watch"
   },
   "keywords": [
     "dropdown",
@@ -30,9 +30,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.33.0",
-    "@pd200x/custom-dropdown-menu": "^0.0.10",
     "@tailwindcss/cli": "^4.1.12",
-    "@tailwindcss/postcss": "^4.1.12",
     "autoprefixer": "^10.4.21",
     "css-loader": "^7.1.2",
     "eslint": "^9.33.0",
@@ -43,9 +41,6 @@
     "html-webpack-plugin": "^5.6.3",
     "husky": "^9.1.7",
     "lint-staged": "^16.1.5",
-    "postcss": "^8.5.6",
-    "postcss-cli": "^11.0.1",
-    "postcss-prefix-selector": "^2.1.1",
     "prettier": "3.6.2",
     "style-loader": "^4.0.0",
     "tailwindcss": "^4.1.12",
