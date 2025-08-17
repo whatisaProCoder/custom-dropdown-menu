@@ -108,25 +108,25 @@
   }
 }
 
-.cdm-menu-card {
+.mycdm-menu-card {
   z-index: 1000;
   transition: all 0.3s ease;
   font-family: "Inter";
 }
 
-.cdm-menu-title {
+.mycdm-menu-title {
   user-select: none;
 }
 
-.cdm-action-item {
+.mycdm-action-item {
   cursor: pointer;
   transition: background-color 0.2s ease;
 }
 
-.cdm-action-item:hover {
+.mycdm-action-item:hover {
   transition: background-color 0.15s ease;
 }
 
-.cdm-action-item:active {
+.mycdm-action-item:active {
   transition: background-color 0.1s ease;
 }

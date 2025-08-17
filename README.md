@@ -94,6 +94,7 @@ You can easily change how the dropdown menu looks by targeting these CSS classes
 
 - `.mycdm-menu-card` - The entire dropdown box
 - `.mycdm-menu-title` - The title bar at the top
+- `.mycdm-action-group` - The container that holds all menu options (scrollable area)
 - `.mycdm-action-item` - Each clickable menu item
 
 ### Example: Custom Styling
@@ -110,6 +111,12 @@ You can easily change how the dropdown menu looks by targeting these CSS classes
   background-color: #4a5568 !important;
   color: white !important;
   font-weight: bold !important;
+}
+
+/* Style the container for all menu options */
+.mycdm-action-group {
+  padding: 0 4px !important; /* Add some padding */
+  background-color: #fafafa !important; /* Light background */
 }
 
 /* Make the menu items more interactive */

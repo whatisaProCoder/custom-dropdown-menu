@@ -78,7 +78,7 @@ export class CustomDropDownMenu {
     const { menuPositionX, menuPositionY } = this.#calculatePosition();
 
     // for user's custom styling, target this class
-    this.menuElement.classList.add("cdm-menu-card");
+    this.menuElement.classList.add("mycdm-menu-card");
 
     this.menuElement.style.position = "fixed";
     this.menuElement.style.height = `${this.height}px`;
@@ -93,20 +93,21 @@ export class CustomDropDownMenu {
     this.menuElement.classList.add("mycdm-flex", "mycdm-flex-col");
 
     this.menuElement.innerHTML = /* html */ `
-            <div class="cdm-menu-title mycdm-font-semibold mycdm-text-xl mycdm-text-dark mycdm-px-4 mycdm-py-2-5 mycdm-border-b-1 mycdm-border-gray">${this.menuTitle}</div>
-            <div id="action-group">
+            <div class="mycdm-menu-title mycdm-font-semibold mycdm-text-xl mycdm-text-dark mycdm-px-4 mycdm-py-2-5 mycdm-border-b-1 mycdm-border-gray">${this.menuTitle}</div>
+            <div class="mycdm-action-group">
             </div>
         `;
 
-    // target cdm-menu-title for custom styling of menu title
+    // target mycdm-menu-title for custom styling of menu title
+    // target mycdm-action-group for custom styling of the action-group
 
-    const actionGroup = this.menuElement.querySelector("#action-group");
+    const actionGroup = this.menuElement.querySelector(".mycdm-action-group");
     actionGroup.style.overflow = "auto";
     this.actionItemArray.forEach((actionItem) => {
       const actionItemElement = document.createElement("div");
 
-      // target cdm-action-item for custom styling
-      actionItemElement.classList.add("cdm-action-item");
+      // target mycdm-action-item for custom styling
+      actionItemElement.classList.add("mycdm-action-item");
 
       actionItemElement.classList.add(
         "mycdm-px-4",
@@ -129,7 +130,7 @@ export class CustomDropDownMenu {
 
     document.body.appendChild(this.menuElement);
 
-    Scrollbar.init(this.menuElement.querySelector("#action-group"), {
+    Scrollbar.init(this.menuElement.querySelector(".mycdm-action-group"), {
       alwaysShowTracks: true,
     });
 
