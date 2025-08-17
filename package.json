@@ -60,7 +60,8 @@
   "files": [
     "index.js",
     "./src/js/components/drop_down_menu.js",
-    "./src/fonts/Inter.ttf"
+    "./src/fonts/Inter.ttf",
+    "./src/css/output.css"
   ],
   "repository": {
     "type": "git",
