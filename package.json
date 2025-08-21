@@ -1,7 +1,7 @@
 {
   "name": "@pd200x/custom-dropdown-menu",
   "version": "0.0.21",
-  "description": "Custom-made npm UI Component.",
+  "description": "Custom-made Dropdown Menu UI Component.",
   "main": "index.js",
   "scripts": {
     "build": "webpack --config webpack.prod.js",
